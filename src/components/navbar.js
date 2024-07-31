@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import React from "react";
+import Image from "next/image"; // Import Image from next/image
 import { Menu, X } from "lucide-react";
 
 const menuItems = [
@@ -20,7 +21,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY >0);
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -34,9 +35,15 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 ">
-        <div className="">
+        <div>
           <a href="#">
-            <img src="https://media.licdn.com/dms/image/D5603AQHuZgJJY-al_w/profile-displayphoto-shrink_800_800/0/1713203997348?e=1727308800&v=beta&t=WY-L57TKju5jZCRHwhsnb8N-FU6UiNqlpBHgB1BujPk" alt="Logo" className=" w-auto h-[50px]" />
+            <Image
+              src="https://media.licdn.com/dms/image/D5603AQHuZgJJY-al_w/profile-displayphoto-shrink_800_800/0/1713203997348?e=1727308800&v=beta&t=WY-L57TKju5jZCRHwhsnb8N-FU6UiNqlpBHgB1BujPk"
+              alt="Logo"
+              width={50} // Specify the width
+              height={50} // Specify the height
+              className="w-auto h-[50px]"
+            />
           </a>
         </div>
         <div className="hidden lg:flex space-x-8">
@@ -60,13 +67,19 @@ export default function Navbar() {
             <div className="flex items-center justify-between">
               <div className="flex-shrink-0">
                 <a href="#">
-                  <img src="/your-logo.png" alt="Logo" className="h-8 w-auto" />
+                  <Image
+                    src="/your-logo.png"
+                    alt="Logo"
+                    width={32} // Specify the width
+                    height={32} // Specify the height
+                    className="h-8 w-auto"
+                  />
                 </a>
               </div>
               <button
                 type="button"
                 onClick={toggleMenu}
-                className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-[#CAA6F7]focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-[#CAA6F7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
               >
                 <span className="sr-only">Close menu</span>
                 <X className="h-6 w-6" aria-hidden="true" />
