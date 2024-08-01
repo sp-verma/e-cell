@@ -1,7 +1,7 @@
-"use client";
-import { ChevronRight } from 'lucide-react'
-import React from 'react'
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa'; // Importing social media icons
+import Image from "next/image";
+import { ChevronRight } from 'lucide-react';
+import React from 'react';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 
 export default function FooterTwo() {
   return (
@@ -46,10 +46,12 @@ export default function FooterTwo() {
 
       <div className="mx-auto max-w-6xl flex items-center justify-between px-4 py-4">
         <div className="flex items-center space-x-4">
-          <img
+          <Image
             src="/logo.jpg"
             alt="Company Logo"
-            className="w-12 h-12 object-contain"
+            width={48}
+            height={48}
+            className="object-contain"
           />
         </div>
         <div className="flex items-center space-x-4">
@@ -72,5 +74,5 @@ export default function FooterTwo() {
         <p className="text-sm font-medium text-gray-400">© 2023 Company Name. All rights reserved.</p>
       </div>
     </footer>
-  )
+  );
 }

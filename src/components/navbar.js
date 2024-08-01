@@ -6,9 +6,12 @@ import { Menu, X } from "lucide-react";
 
 const menuItems = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/" },
-  { name: "Team", href: "/team" },
-  { name: "Contact", href: "/" },
+  { name: "About Us", href: "/" },
+  { name: "Initiatives", href: "/initiatives" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Contact", href: "/contact" },
+  { name: "Blogs", href: "/blogs" },
+  { name: "Join Us", href: "/joinus" },
 ];
 
 export default function Navbar() {
@@ -31,7 +34,7 @@ export default function Navbar() {
   return (
     <div
       className={`fixed w-full z-50 transition-all ${
-        isScrolled ? "bg-black border-gray-200" : "bg-transparent"
+        isScrolled ? " bg-gray-800 border-gray-200" : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
@@ -67,7 +70,7 @@ export default function Navbar() {
         <div className="absolute inset-0 top-16 z-50 bg-white shadow-lg lg:hidden">
           <div className="px-5 pb-6 pt-5">
             <div className="flex items-center justify-between">
-              <div className="flex-shrink-0 b">
+              <div className="flex-shrink-0">
                 <a href="#">
                   <Image
                     src="/logo.webp"
