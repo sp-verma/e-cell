@@ -178,6 +178,8 @@ export default function DirectionAwareHoverDemo() {
         ))}
       </div>
       
+      
+      
     </motion.div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import React from "react";
-import Image from "next/image"; // Import Image from next/image
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const menuItems = [
@@ -64,13 +64,13 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="absolute inset-x-0 top-0 z-50 bg-white shadow-lg lg:hidden">
+        <div className="absolute inset-0 top-16 z-50 bg-white shadow-lg lg:hidden">
           <div className="px-5 pb-6 pt-5">
             <div className="flex items-center justify-between">
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 b">
                 <a href="#">
                   <Image
-                    src="/your-logo.png"
+                    src="/logo.webp"
                     alt="Logo"
                     width={32}
                     height={32}
@@ -81,13 +81,13 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={toggleMenu}
-                className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-black focus:outline-none"
+                className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-900 hover:text-gray-900 focus:outline-none"
               >
                 <span className="sr-only">Close menu</span>
                 <X className="h-6 w-6" aria-hidden="true" />
               </button>
             </div>
-            <div className="mt-6">
+            <div className="mt-6 bg-white">
               <nav className="grid gap-y-4">
                 {menuItems.map((item) => (
                   <a
