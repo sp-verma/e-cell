@@ -3,7 +3,7 @@ import Team from "@/components/team"
 
 const page = () => {
   return (
-    <div>
+    <div >
       <Team/>
     </div>
   )

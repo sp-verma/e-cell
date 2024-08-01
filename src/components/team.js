@@ -161,7 +161,7 @@ export default function DirectionAwareHoverDemo() {
   );
 
   const teamMembers = [
-    { name: "John Doe", position: "Team Lead", imageUrl, socialLinks },
+    { name: "Bittu kumar", position: "Team Lead", imageUrl, socialLinks },
     { name: "Jane Smith", position: "Developer", imageUrl, socialLinks },
     { name: "Alice Johnson", position: "Designer", imageUrl, socialLinks },
     // Add more members as needed
@@ -169,12 +169,12 @@ export default function DirectionAwareHoverDemo() {
 
   return (
     <motion.div
-      className="h-auto bg-gray-800 text-white p-4 md:p-8 pt-40"
+      className="h-auto bg-gray-800 text-white p-4 md:p-8 pt-40 "
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
     >
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">
+      <h1 className="text-3xl md:text-4xl font-bold text-center mb-8 mt-[3rem]">
         E-cell MCE Motihari
       </h1>
       <h2 className="text-xl md:text-2xl font-semibold text-center mb-8">
