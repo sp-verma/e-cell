@@ -7,7 +7,9 @@ import { FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const DirectionAwareHover = ({
   imageUrl,
-  children,
+  name,
+  position,
+  socialLinks,
   childrenClassName,
   imageClassName,
   className,
@@ -50,7 +52,7 @@ const DirectionAwareHover = ({
     <motion.div
       onMouseEnter={handleMouseEnter}
       ref={ref}
-      className={`md:h-96 w-60 h-60 md:w-96 bg-transparent rounded-lg overflow-hidden group/card relative ${className}`}
+      className={`w-full max-w-xs md:max-w-sm lg:max-w-md bg-transparent rounded-lg overflow-hidden group/card relative ${className}`}
     >
       <AnimatePresence mode="wait">
         <motion.div
@@ -62,7 +64,7 @@ const DirectionAwareHover = ({
           <motion.div className="group-hover/card:block hidden absolute inset-0 w-full h-full bg-black/40 z-10 transition duration-500" />
           <motion.div
             variants={variants}
-            className={`h-full w-full relative bg-gray-50 dark:bg-black ${imageClassName}`}
+            className={`h-full w-full relative ${imageClassName}`}
             transition={{
               duration: 0.2,
               ease: "easeOut",
@@ -70,9 +72,9 @@ const DirectionAwareHover = ({
           >
             <Image
               alt="image"
-              className="h-full w-full object-cover scale-[1.15]"
-              width="1000"
-              height="1000"
+              className="h-full w-full object-cover"
+              width={1000}
+              height={1000}
               src={imageUrl}
             />
           </motion.div>
@@ -82,9 +84,13 @@ const DirectionAwareHover = ({
               duration: 0.5,
               ease: "easeOut",
             }}
-            className={`text-white absolute bottom-4 left-4 z-40 ${childrenClassName}`}
+            className={`absolute bottom-0 left-0 right-0 p-4 text-center text-white bg-black/50 ${childrenClassName}`}
           >
-            {children}
+            <p className="font-bold text-lg">{name}</p>
+            <p className="text-sm">{position}</p>
+            <div className="flex justify-center space-x-4 mt-2">
+              {socialLinks}
+            </div>
           </motion.div>
         </motion.div>
       </AnimatePresence>
@@ -147,39 +153,44 @@ export default function DirectionAwareHoverDemo() {
   const imageUrl = "/bitu.webg"; // Replace with your image path
 
   const socialLinks = (
-    <div className="space-y-2">
-      <p className="font-bold text-2xl text-center font-sans ">Team Lead</p>
-      <div className="flex space-x-4 w-10 h-24">
-        <FaLinkedin className="text-white hover:text-blue-500 h-16 w-16" />
-        <FaTwitter className="text-white hover:text-blue-500" />
-        <FaInstagram className="text-white hover:text-pink-500" />
-      </div>
+    <div className="space-y-2 text-white">
+      <FaLinkedin className="hover:text-blue-500 h-6 w-6" />
+      <FaTwitter className="hover:text-blue-400 h-6 w-6" />
+      <FaInstagram className="hover:text-pink-500 h-6 w-6" />
     </div>
   );
 
+  const teamMembers = [
+    { name: "John Doe", position: "Team Lead", imageUrl, socialLinks },
+    { name: "Jane Smith", position: "Developer", imageUrl, socialLinks },
+    { name: "Alice Johnson", position: "Designer", imageUrl, socialLinks },
+    // Add more members as needed
+  ];
+
   return (
     <motion.div
-      className="h-auto bg-gray-800 text-white p-8 pt-40"
+      className="h-auto bg-gray-800 text-white p-4 md:p-8 pt-40"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
     >
-      <h1 className="text-4xl font-bold text-center mb-8">
+      <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">
         E-cell MCE Motihari
       </h1>
-      <h2 className="text-2xl font-semibold text-center mb-8">
+      <h2 className="text-xl md:text-2xl font-semibold text-center mb-8">
         Team Members
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {Array.from({ length: 6 }).map((_, index) => (
-          <DirectionAwareHover key={index} imageUrl={imageUrl}>
-            {socialLinks}
-          </DirectionAwareHover>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+        {teamMembers.map((member, index) => (
+          <DirectionAwareHover
+            key={index}
+            imageUrl={member.imageUrl}
+            name={member.name}
+            position={member.position}
+            socialLinks={member.socialLinks}
+          />
         ))}
       </div>
-      
-      
-      
     </motion.div>
   );
 }
