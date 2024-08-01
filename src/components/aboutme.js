@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function LampDemo() {
   return (
-    <div className="min-h-[30rem] flex flex-col justify-between items-center bg-black px-4 md:px-8 lg:px-16">
+    <div className="min-h-[30rem] flex flex-col justify-between items-center bg-black px-4 md:px-8 lg:px-16" id="about-us">
       <motion.h1
         initial={{ opacity: 0.5, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}

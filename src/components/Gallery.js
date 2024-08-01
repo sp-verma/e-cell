@@ -4,7 +4,7 @@ import { HeroParallax } from "@/components/ui/hero-parallax";
 
 export default function HeroParallaxDemo() {
   return (
-    <div className="flex flex-col gap-10 min-h-screen ">
+    <div className="flex flex-col gap-10 min-h-screen " id="gallery">
       <h1 className="text-center font-bold font-serif text-5xl mt-10 text-white opacity-100">GALLERY</h1>
       <HeroParallax products={products} />
     </div>
