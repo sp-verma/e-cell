@@ -15,7 +15,7 @@ export default function Home() {
         <Events />
         <Gallery />
       
-      <Footer />
+      
     </div>
   );
 }
