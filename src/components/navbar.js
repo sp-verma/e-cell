@@ -31,17 +31,17 @@ export default function Navbar() {
   return (
     <div
       className={`fixed w-full z-50 transition-all ${
-        isScrolled ? " bg-black border-gray-200" : "bg-transparent"
+        isScrolled ? "bg-black border-gray-200" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 ">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
         <div>
           <a href="#">
             <Image
               src="https://media.licdn.com/dms/image/D5603AQHuZgJJY-al_w/profile-displayphoto-shrink_800_800/0/1713203997348?e=1727308800&v=beta&t=WY-L57TKju5jZCRHwhsnb8N-FU6UiNqlpBHgB1BujPk"
               alt="Logo"
-              width={50} // Specify the width
-              height={50} // Specify the height
+              width={50}
+              height={50}
               className="w-auto h-[50px]"
             />
           </a>
@@ -58,20 +58,22 @@ export default function Navbar() {
           ))}
         </div>
         <div className="lg:hidden">
-          <Menu onClick={toggleMenu} className="h-6 w-6 cursor-pointer" />
+          <Menu onClick={toggleMenu} className="h-6 w-6 cursor-pointer text-white" />
         </div>
       </div>
+
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="absolute inset-x-0 top-0 z-50 origin-top-right transform p-2 transition lg:hidden">
-          <div className="px-5 pb-6 pt-5 bg-white rounded-lg shadow-lg">
+        <div className="absolute inset-x-0 top-0 z-50 bg-white shadow-lg lg:hidden">
+          <div className="px-5 pb-6 pt-5">
             <div className="flex items-center justify-between">
               <div className="flex-shrink-0">
                 <a href="#">
                   <Image
                     src="/your-logo.png"
                     alt="Logo"
-                    width={32} // Specify the width
-                    height={32} // Specify the height
+                    width={32}
+                    height={32}
                     className="h-8 w-auto"
                   />
                 </a>
@@ -79,7 +81,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={toggleMenu}
-                className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-[#CAA6F7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-black focus:outline-none"
               >
                 <span className="sr-only">Close menu</span>
                 <X className="h-6 w-6" aria-hidden="true" />
@@ -91,7 +93,7 @@ export default function Navbar() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-m-3 flex items-center rounded-md p-3 text-sm font-semibold hover:bg-[#CAA6F7]"
+                    className="flex items-center rounded-md p-3 text-sm font-semibold text-black hover:bg-gray-100"
                   >
                     {item.name}
                   </a>
