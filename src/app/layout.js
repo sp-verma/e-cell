@@ -1,8 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
-import Footer from "@/components/footer"
-
+import Footer from "@/components/footer";
+import Socialmedia from "@/components/socialmedia"; // Adjust the path to where your FloatingSocialMedia component is located
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,15 +15,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      <Navbar/>
-      
-     
-      
-      {children}
-      <Footer/>
-
-     
-     
+        <Navbar />
+        <Socialmedia /> {/* Adding Floating Social Media icons */}
+        {children}
+        <Footer />
       </body>
     </html>
   );

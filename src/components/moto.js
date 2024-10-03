@@ -3,11 +3,11 @@ import { GlareCard } from "@/components/ui/glare-card";
 
 export default function GlareCardDemo() {
   return (
-    <div className="px-4 md:px-8 lg:px-32 py-8">
+    <div className="px-4 md:px-8 lg:px-32 py-8 ">
       <h1 className="text-center text-3xl md:text-4xl lg:text-5xl font-mono mb-8 lg:mb-14 font-bold text-white opacity-100">
         OUR MOTTO
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 mb-10 lg:mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-6 mb-10 lg:mb-20">
         <GlareCard className="flex flex-col items-center justify-center p-6">
           <p className="font-bold text-white text-lg md:text-xl">THINK</p>
           <p className="font-serif text-sm md:text-base text-neutral-200 mt-4 text-balance text-center md:text-left">
@@ -17,9 +17,9 @@ export default function GlareCardDemo() {
             entrepreneurial challenges.
           </p>
         </GlareCard>
-        <GlareCard className="flex flex-col items-center justify-center p-6">
+        <GlareCard className="flex flex-col items-center justify-center p-8">
           <p className="font-bold text-white text-lg md:text-xl">BUILD</p>
-          <p className="font-serif text-sm md:text-base text-neutral-200 mt-4 text-balance text-center md:text-left">
+          <p className="font-serif text-sm md:text-base text-neutral-200 mt-4 text-balance text-center md:text-left ">
             All great startups are started by people who have a knack at
             building products. E-Cell Mce-Motihari organizes events like Idea
             Validation camps to help bring out the best of builders among

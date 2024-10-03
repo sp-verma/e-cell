@@ -4,6 +4,7 @@ import Moto from '@/components/moto';
 import Events from '@/components/events';
 import Gallery from '@/components/Gallery';
 import Footer from '@/components/footer';
+import Statup from "@/components/statup"
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <Aboutme />
         <Moto />
         <Events />
+        <Statup/>
         <Gallery />
       
       
